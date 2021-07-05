@@ -7,7 +7,8 @@ import { Ionicons } from "@expo/vector-icons";
 //Screens
 import RestaurantsScreen from "../../screens/RestaurantsScreen";
 import CartScreen from "../../screens/CartScreen";
-import OrderScreen from "../../screens/OrderScreen";
+import OrderScreen from "../../screens/Order/OrderScreen";
+import OrderNavigator from "../../screens/Order/order.navigator";
 import AccountNavigator from "../../screens/Settings/accout.navigator";
 
 //BOTTOM TAB:
@@ -40,7 +41,7 @@ const AppNavigator = () => {
       <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
 
-      <Tab.Screen name="Orders" component={OrderScreen} />
+      <Tab.Screen name="Orders" component={OrderNavigator} />
       <Tab.Screen name="Settings" component={AccountNavigator} />
     </Tab.Navigator>
   );
