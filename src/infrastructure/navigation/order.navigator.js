@@ -1,6 +1,7 @@
 import React from "react";
-import OrderScreen from "./OrderScreen";
-import OrderDetailsScreen from "./OrderDetailsScreen";
+
+import OrderScreen from "../../screens/Order/OrderScreen";
+import OrderDetailsScreen from "../../screens/Order/OrderDetailsScreen";
 
 import {
   createStackNavigator,

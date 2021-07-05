@@ -5,11 +5,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 //Screens
-import RestaurantsScreen from "../../screens/RestaurantsScreen";
-import CartScreen from "../../screens/CartScreen";
-import OrderScreen from "../../screens/Order/OrderScreen";
-import OrderNavigator from "../../screens/Order/order.navigator";
-import AccountNavigator from "../../screens/Settings/accout.navigator";
+import RestaurantNavigator from "./restaurant.navigator";
+import OrderNavigator from "./order.navigator";
+import AccountNavigator from "./accout.navigator";
+import CartNavigator from "./cart.navigator";
 
 //BOTTOM TAB:
 const Tab = createBottomTabNavigator();
@@ -38,8 +37,8 @@ const AppNavigator = () => {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-      <Tab.Screen name="Cart" component={CartScreen} />
+      <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
+      <Tab.Screen name="Cart" component={CartNavigator} />
 
       <Tab.Screen name="Orders" component={OrderNavigator} />
       <Tab.Screen name="Settings" component={AccountNavigator} />

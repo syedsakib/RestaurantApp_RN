@@ -1,9 +1,9 @@
 import React from "react";
-import ProfileScreen from "./ProfileScreen";
-import UpdateProfileScreen from "./UpdateProfileScreen";
-import OrderDetailsScreen from "./OrderDetailsScreen";
-import FavouritesScreen from "./FavouritesScreen";
-import UpdateAddress from "./UpdateAddress";
+import ProfileScreen from "../../screens/Settings/ProfileScreen";
+import UpdateProfileScreen from "../../screens/Settings/UpdateProfileScreen";
+import OrderDetailsScreen from "../../screens/Settings/OrderDetailsScreen";
+import FavouritesScreen from "../../screens/Settings/FavouritesScreen";
+import UpdateAddress from "../../screens/Settings/UpdateAddress";
 
 import {
   createStackNavigator,

@@ -1,11 +1,12 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
+
 import Screen from "../../components/Screen";
 
-const FavouritesScreen = ({ navigation }) => {
+const RestaurantDetailsScreen = ({ navigation }) => {
   return (
     <Screen>
-      <Text>Favourites Screen</Text>
+      <Text>Restaurant Details Screen</Text>
       <TouchableOpacity
         style={{
           backgroundColor: "green",
@@ -20,4 +21,4 @@ const FavouritesScreen = ({ navigation }) => {
   );
 };
 
-export default FavouritesScreen;
+export default RestaurantDetailsScreen;

@@ -1,23 +1,24 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
+
 import Screen from "../../components/Screen";
 
-const FavouritesScreen = ({ navigation }) => {
+const RestaurantsScreen = ({ navigation }) => {
   return (
     <Screen>
-      <Text>Favourites Screen</Text>
+      <Text> Restaurants Screen</Text>
       <TouchableOpacity
         style={{
           backgroundColor: "green",
           padding: 10,
           margin: 20,
         }}
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate("RestaurantDetails")}
       >
-        <Text>Go Back</Text>
+        <Text>Restaurant Details Screen</Text>
       </TouchableOpacity>
     </Screen>
   );
 };
 
-export default FavouritesScreen;
+export default RestaurantsScreen;
