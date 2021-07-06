@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, TouchableOpacity } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
 
 import Screen from "../../components/Screen";
+import { fetchRestaurants } from "../../store/restaurant/restaurantActions";
 
 const RestaurantsScreen = ({ navigation }) => {
+  const restaurants = useSelector((state) => state.restautants);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchRestaurants());
+  }, []);
+
+  console.log(restaurants);
+
   return (
     <Screen>
       <Text> Restaurants Screen</Text>
