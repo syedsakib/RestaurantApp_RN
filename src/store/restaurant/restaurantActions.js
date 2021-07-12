@@ -1,14 +1,23 @@
-import { GET_RESTAUTANTS } from "./restaurantTypes";
+import {
+  GET_RESTAUTANTS,
+  GET_RESTAUTANTS_ERROR,
+  GET_RESTAUTANTS_SUCCESS,
+} from "./restaurantTypes";
+import homeRestaurantsData from "./homeRestaurantsData";
 
 export const fetchRestaurants = () => async (dispatch) => {
-  dispatch({
-    type: GET_RESTAUTANTS,
-    payload: [
-      "restaurant 1",
-      "restaurant 2",
-      "restaurant 3",
-      "restaurant 4",
-      "restaurant 5",
-    ],
-  });
+  try {
+    dispatch({
+      type: GET_RESTAUTANTS,
+    });
+    dispatch({
+      type: GET_RESTAUTANTS_SUCCESS,
+      payload: homeRestaurantsData,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_RESTAUTANTS_ERROR,
+      payload: "Something Went Wrong! Please Try Again, Later...",
+    });
+  }
 };

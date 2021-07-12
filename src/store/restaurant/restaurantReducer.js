@@ -1,4 +1,8 @@
-import { GET_RESTAUTANTS } from "./restaurantTypes";
+import {
+  GET_RESTAUTANTS,
+  GET_RESTAUTANTS_ERROR,
+  GET_RESTAUTANTS_SUCCESS,
+} from "./restaurantTypes";
 
 const initialState = {
   restaurants: [],
@@ -12,9 +16,21 @@ export const restautantsReducer = (state = initialState, action) => {
     case GET_RESTAUTANTS:
       return {
         ...state,
+        loading: true,
+        error: null,
+      };
+    case GET_RESTAUTANTS_SUCCESS:
+      return {
+        ...state,
         restaurants: action.payload,
         loading: false,
         error: null,
+      };
+    case GET_RESTAUTANTS_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
       };
     default:
       return state;
