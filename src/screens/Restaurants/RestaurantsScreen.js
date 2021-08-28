@@ -1,23 +1,37 @@
 import React, { useEffect } from "react";
-import { Text, TouchableOpacity } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+import { Text, TouchableOpacity, FlatList } from "react-native";
 
 import Screen from "../../components/Screen";
+import RestaurantCard from "./../../components/RestaurantCard";
+
+import { useSelector, useDispatch } from "react-redux";
 import { fetchRestaurants } from "../../store/restaurant/restaurantActions";
 
 const RestaurantsScreen = ({ navigation }) => {
-  const restaurants = useSelector((state) => state.restautants);
+  const restaurantsData = useSelector((state) => state.restautants);
+  const { error, loading, restaurants } = restaurantsData;
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRestaurants());
-  }, []);
+  }, [restaurantsData]);
 
   console.log(restaurants);
 
+  const renderItem = ({ item }) => (
+    <RestaurantCard
+      propStyle={{ marginHorizontal: 10, marginVertical: 6 }}
+      data={item}
+    />
+  );
+
   return (
     <Screen>
-      <Text> Restaurants Screen</Text>
+      <FlatList
+        data={restaurants}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+      />
       <TouchableOpacity
         style={{
           backgroundColor: "green",
