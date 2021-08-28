@@ -14,7 +14,7 @@ const RestaurantsScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRestaurants());
-  }, [restaurantsData]);
+  }, []);
 
   console.log(restaurants);
 
@@ -27,11 +27,13 @@ const RestaurantsScreen = ({ navigation }) => {
 
   return (
     <Screen>
-      <FlatList
-        data={restaurants}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-      />
+      {restaurantsData && (
+        <FlatList
+          data={restaurants}
+          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+        />
+      )}
       <TouchableOpacity
         style={{
           backgroundColor: "green",

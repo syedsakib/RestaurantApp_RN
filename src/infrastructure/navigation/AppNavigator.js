@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 //Screens
-import RestaurantNavigator from "./restaurant.navigator";
+import { RestaurantNavigator } from "./restaurant.navigator";
 import OrderNavigator from "./order.navigator";
 import AccountNavigator from "./accout.navigator";
 import CartNavigator from "./cart.navigator";
@@ -39,7 +39,6 @@ const AppNavigator = () => {
     >
       <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
       <Tab.Screen name="Cart" component={CartNavigator} />
-
       <Tab.Screen name="Orders" component={OrderNavigator} />
       <Tab.Screen name="Settings" component={AccountNavigator} />
     </Tab.Navigator>

@@ -5,18 +5,17 @@ import RestaurantDetailsScreen from "../../screens/Restaurants/RestaurantDetails
 
 import {
   createStackNavigator,
-  CardStyleInterpolators,
+  TransitionPresets,
 } from "@react-navigation/stack";
 
 const RestaurantStack = createStackNavigator();
 
-const RestaurantNavigator = ({ route, navigation }) => {
+export const RestaurantNavigator = ({ route, navigation }) => {
   return (
     <RestaurantStack.Navigator
-      // headerMode="screen"
+      headerMode="none"
       screenOptions={{
-        headerShown: false,
-        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        ...TransitionPresets.ModalPresentationIOS,
       }}
     >
       <RestaurantStack.Screen
@@ -31,4 +30,4 @@ const RestaurantNavigator = ({ route, navigation }) => {
   );
 };
 
-export default RestaurantNavigator;
+//export default RestaurantNavigator;
