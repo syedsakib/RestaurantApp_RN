@@ -14,7 +14,7 @@ const RestaurantsScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRestaurants());
-  }, []);
+  }, [restaurants]);
 
   console.log(restaurants);
 
